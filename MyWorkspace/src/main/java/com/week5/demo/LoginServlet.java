@@ -43,14 +43,13 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            String query = "SELECT * FROM userdb WHERE username = ? AND password = ?";
+            String query = "SELECT * FROM userdb WHERE username =Qiwenbin AND password = 2022211001000415";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, username);
-            statement.setString(2, password);
+           
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                out.println("<h1>Login success!</h1>");
+                out.println("<h1>Login success</h1>");
                 out.println("<h2>Welcome " + username + "</h2>");
             } else {
                 out.println("<h1>Login error</h1>");
